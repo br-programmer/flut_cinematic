@@ -1,0 +1,52 @@
+name: flut_cinematic_ui
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  cached_network_image: ^3.3.1
+  flex_color_scheme: ^7.3.1
+  flutter:
+    sdk: flutter
+  formz: ^0.6.1
+  fzregex: ^2.0.0
+  intl: ^0.18.1
+  shimmer: ^3.0.0
+  timeago: ^3.6.1  
+
+dev_dependencies:
+  very_good_analysis: ^5.1.0
+
+flutter_gen:
+  output: lib/src/gen/
+
+  integrations:
+    flutter_svg: true
+
+  assets:
+    outputs:
+      package_parameter_enabled: true
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/svgs/
+
+  fonts:
+    - family: RedHatDisplay
+      fonts:
+        - asset: lib/src/typography/fonts/RedHatDisplay-Regular.ttf
+        - asset: lib/src/typography/fonts/RedHatDisplay-Medium.ttf
+        - asset: lib/src/typography/fonts/RedHatDisplay-SemiBold.ttf
+    
+    - family: FlutCinematic
+      fonts:
+        - asset: assets/icons/FlutCinematic.ttf 

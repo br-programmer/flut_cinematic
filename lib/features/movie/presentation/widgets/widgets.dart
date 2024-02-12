@@ -1,0 +1,12 @@
+export 'choose_seats_button.dart';
+export 'date_selector.dart';
+export 'movie_animated_poster.dart';
+export 'movie_detail_card.dart';
+export 'movie_genders_duration_and_adult.dart';
+export 'movies_bottom_bar.dart';
+export 'movies_list.dart';
+export 'movies_loaded_widget.dart';
+export 'movies_loading_widget.dart';
+export 'search_movie_result.dart';
+export 'search_movie_widget.dart';
+export 'select_cinema_and_hour.dart';

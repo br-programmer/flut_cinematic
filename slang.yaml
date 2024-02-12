@@ -1,0 +1,9 @@
+base_locale: en
+input_directory: i18n
+output_directory: lib/i18n
+input_file_pattern: .json
+namespaces: true
+translate_var: texts
+output_file_name: translations.g.dart
+translation_overrides: true
+string_interpolation: double_braces

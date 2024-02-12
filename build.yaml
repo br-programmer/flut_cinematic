@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        generate_for:
+          include:
+            - "lib/core/shared/presentation/providers/**/**_provider.dart"
+            - "lib/features/**/presentation/providers/**/**_provider.dart"
+            - "lib/features/seat/presentation/models/**.dart"
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - "type=lint"

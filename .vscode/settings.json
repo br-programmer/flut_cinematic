@@ -1,0 +1,19 @@
+{
+  "search.exclude": {
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "files.defaultLanguage": "dart",
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/*.freezed.dart": true,
+    "**/*.g.dart": true,
+    "**/.flutter-plugins*": true,
+    "**/.metadata*": true,
+    "**/.packages": true
+  }
+}

@@ -1,0 +1,21 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        generate_for:
+          include:
+            - "lib/src/features/**/entities/**.dart"
+            - "lib/src/features/**/responses/**.dart"
+            - "lib/src/features/**/requests/**.dart"
+      json_serializable:
+        options:
+          explicit_to_json: true
+        generate_for:
+          include:
+            - "lib/src/features/**/entities/**.dart"
+            - "lib/src/features/**/responses/**.dart"
+            - "lib/src/features/**/requests/**.dart"
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - "type=lint"
