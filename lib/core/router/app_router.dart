@@ -16,11 +16,6 @@ class AppRouter {
 
   static List<GoRoute> get routes => [
         GoRoute(
-          path: Routes.splash.path,
-          name: Routes.splash.name,
-          builder: SplashScreen.builder,
-        ),
-        GoRoute(
           path: Routes.auth.path,
           name: Routes.auth.name,
           builder: LoginScreen.builder,

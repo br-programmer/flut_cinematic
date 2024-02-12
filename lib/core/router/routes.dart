@@ -3,11 +3,6 @@ class Routes {
   final String name;
   final String path;
 
-  static Routes get splash => const Routes._(
-        name: 'splash',
-        path: '/splash',
-      );
-
   static Routes get auth => const Routes._(
         name: 'auth',
         path: '/auth',
@@ -37,21 +32,4 @@ class Routes {
         name: 'ticketPurchase',
         path: '/ticket-purchase',
       );
-
-  static String? authenticatedRedirect(String? fullPath) {
-    final auth = fullPath == Routes.auth.path;
-    final splash = fullPath == Routes.splash.path;
-    if (auth || splash) {
-      return Routes.movies.path;
-    }
-    return null;
-  }
-
-  static String? unauthenticatedRedirect(String? fullPath) {
-    final auth = fullPath != Routes.auth.path;
-    if (auth) {
-      return Routes.auth.path;
-    }
-    return null;
-  }
 }
