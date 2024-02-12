@@ -1,5 +1,8 @@
 {
     "dubbedStandar": "Doblada, Estándar, 2D",
     "at": "at",
-    "room": "Room"
+    "room": "Room",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location"
 }
