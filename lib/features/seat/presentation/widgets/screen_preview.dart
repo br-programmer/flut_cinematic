@@ -1,18 +1,21 @@
+import 'package:flut_cinematic/lib.dart';
+import 'package:flut_cinematic_domain/flut_cinematic_domain.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class ScreenPreview extends StatelessWidget {
-  const ScreenPreview({super.key});
+class ScreenPreview extends HookConsumerWidget {
+  const ScreenPreview({super.key, required this.movie});
+  final Movie movie;
 
   @override
-  Widget build(BuildContext context) {
-    const image =
-        'https://image.tmdb.org/t/p/w780//4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg';
+  Widget build(BuildContext context, WidgetRef ref) {
+    final movie = ref.watch(movieProvider(this.movie));
     return ClipPath(
       clipper: _MyClipper(),
-      child: const AspectRatio(
+      child: AspectRatio(
         aspectRatio: 6,
-        child: FlutCinematicImage(imageUrl: image),
+        child: FlutCinematicImage(imageUrl: movie.backdrop),
       ),
     );
   }

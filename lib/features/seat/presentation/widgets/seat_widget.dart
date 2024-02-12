@@ -14,7 +14,7 @@ class SeatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: edgeInsetsL14.add(edgeInsetsB14),
+      padding: edgeInsetsL14.add(edgeInsetsB4),
       child: FlutCinematicIconButton(
         iconData: FlutCinematicIcons.seat,
         color: seatStatus.color,
