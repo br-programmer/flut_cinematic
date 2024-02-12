@@ -1,10 +1,11 @@
 {
     "bookTickets": "Reservar entradas {{money}}",
-    "avaible": "Disponible",
-    "notAviable": "No disponible",
+    "available": "Disponible",
+    "notAvailable": "No disponible",
     "selected": "Seleccionado",
     "seats": {
         "one": "Asiento",
         "other": "Asientos"
-    }
+    },
+    "chooseSeats": "Elegir asientos"
 }

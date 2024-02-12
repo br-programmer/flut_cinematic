@@ -6,5 +6,6 @@
     "seats": {
         "one": "Seat",
         "other": "Seats"
-    }
+    },
+    "chooseSeats": "Choose seats"
 }
