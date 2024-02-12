@@ -19,13 +19,24 @@ class FlutCinematicAuthService {
     _streamSubscription = _auth.authStateChanges().listen(_addToController);
   }
 
-  FutureHttpRequest<void> login(String email, String password) async {
+  FutureHttpRequest<domain.User> login(String email, String password) async {
     try {
-      await _auth.signInWithEmailAndPassword(
+      final credentials = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return const Either.right(null);
+      final currentUser = credentials.user;
+      if (currentUser != null) {
+        final user = domain.User(
+          uid: currentUser.uid,
+          phoneNumber: currentUser.phoneNumber,
+          displayName: currentUser.displayName,
+          photoURL: currentUser.photoURL,
+          email: currentUser.email,
+        );
+        return Either.right(user);
+      }
+      return Either.left(HttpRequestFailure.unauthorized());
     } catch (_) {
       return Either.left(HttpRequestFailure.unauthorized());
     }

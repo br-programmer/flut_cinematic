@@ -15,7 +15,7 @@ class AuthRepository implements IAuthRepository {
   Stream<User> get onUserChanged => _authService.onUserChanged;
 
   @override
-  FutureHttpRequest<void> login(String email, String password) =>
+  FutureHttpRequest<User> login(String email, String password) =>
       _authService.login(email, password);
 
   @override
