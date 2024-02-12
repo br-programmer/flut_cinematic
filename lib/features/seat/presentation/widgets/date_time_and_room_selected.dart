@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
@@ -33,14 +34,17 @@ class DateTimeAndRoomSelected extends HookConsumerWidget {
                       style: context.textTheme.bodySmall,
                       children: [
                         TextSpan(
-                          text: ' at '.hardCode,
+                          text: ' ${texts.misc.at} '.hardCode,
                           style: context.textTheme.bodySmall?.copyWith(
                             fontWeight: AppFontWeight.regular,
                             color: Palette.white.withOpacity(.6),
                           ),
                         ),
                         TextSpan(
-                          text: time!.myHour.replaceAll(' ', '').toLowerCase(),
+                          text: time!
+                              .myHour('en')
+                              .replaceAll(' ', '')
+                              .toLowerCase(),
                         ),
                       ],
                     ),
@@ -60,7 +64,7 @@ class DateTimeAndRoomSelected extends HookConsumerWidget {
                   space6,
                   RichText(
                     text: TextSpan(
-                      text: 'Room 2'.hardCode,
+                      text: '${texts.misc.room} 2'.hardCode,
                       style: context.textTheme.bodySmall,
                     ),
                   ),

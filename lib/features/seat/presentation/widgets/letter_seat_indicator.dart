@@ -21,7 +21,7 @@ class LetterRowIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: edgeInsetsR16.add(edgeInsetsB14),
+      padding: edgeInsetsR14.add(edgeInsetsB4),
       child: Text(
         leters[index] ?? '',
         style: context.textTheme.bodyLarge,

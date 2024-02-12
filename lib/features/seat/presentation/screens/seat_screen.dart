@@ -1,4 +1,5 @@
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_common/flut_cinematic_common.dart';
 import 'package:flut_cinematic_domain/flut_cinematic_domain.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
@@ -22,18 +23,18 @@ class SeatScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return FlutCinematicBaseScreen(
       appBar: FlutCinematicAppBar(
-        title: 'Doblada, Reguar, 2D\n'.hardCode,
+        title: '${texts.misc.dubbedStandar}\n'.hardCode,
         subTitle: movie.title,
         onBack: context.pop,
         button: const DateTimeAndRoomSelected(),
       ),
-      body: const Padding(
+      body: Padding(
         padding: edgeInsetsT16,
         child: Column(
           children: [
-            ScreenPreview(),
+            ScreenPreview(movie: movie),
             gap32,
-            SeatLayoutWidget(),
+            const SeatLayoutWidget(),
           ],
         ),
       ),

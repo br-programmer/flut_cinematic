@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
@@ -31,11 +32,9 @@ class BookTicketsAndSeatStatusInfo extends StatelessWidget {
                   final seats = ref.watch(ticketProvider).seats;
                   final total = (seats.length * 5.6).money;
                   return FlutCinematicPrimaryButton(
-                    text: 'Book tickets $total'.hardCode,
+                    text: texts.seat.bookTickets(money: total),
                     onPressed: seats.isNotEmpty
-                        ? () => context.goNamed(
-                              Routes.ticketPurchase.name,
-                            )
+                        ? () => context.goNamed(Routes.ticketPurchase.name)
                         : null,
                   );
                 },

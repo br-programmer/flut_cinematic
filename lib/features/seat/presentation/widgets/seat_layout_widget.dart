@@ -11,33 +11,36 @@ class SeatLayoutWidget extends HookConsumerWidget {
     final rows = ref.watch(seatProvider).rows;
     return Expanded(
       child: Padding(
-        padding: edgeInsetsH20,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: rows.mapList(
-            (row) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: row.items.mapList(
-                  (item) {
-                    final index = rows.indexOf(row);
-                    return item.status.child(
-                      index: index,
-                      onPressed: (value) {
-                        final letter = leters[index];
-                        final seat = '$letter${item.index + 1}';
-                        ref.read(ticketProvider.notifier).newSeat(seat);
-                        ref.read(seatProvider.notifier).update(
-                              indexR: item.index + 1,
-                              indexC: index,
-                              status: value,
-                            );
-                      },
-                    );
-                  },
-                ),
-              );
-            },
+        padding: edgeInsetsH4,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: rows.mapList(
+              (row) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: row.items.mapList(
+                    (item) {
+                      final index = rows.indexOf(row);
+                      return item.status.child(
+                        index: index,
+                        onPressed: (value) {
+                          final letter = leters[index];
+                          final seat = '$letter${item.index + 1}';
+                          ref.read(ticketProvider.notifier).newSeat(seat);
+                          ref.read(seatProvider.notifier).update(
+                                indexR: item.index + 1,
+                                indexC: index,
+                                status: value,
+                              );
+                        },
+                      );
+                    },
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),

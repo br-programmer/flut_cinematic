@@ -1,4 +1,5 @@
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +13,11 @@ enum SeatStatus {
   String get text {
     switch (this) {
       case SeatStatus.aviable:
-        return 'Avaible'.hardCode;
+        return texts.seat.avaible;
       case SeatStatus.notAviable:
-        return 'Not aviable'.hardCode;
+        return texts.seat.notAviable;
       case SeatStatus.selected:
-        return 'Selected'.hardCode;
+        return texts.seat.selected;
       case SeatStatus.empty:
       case SeatStatus.other:
         return '';
@@ -47,7 +48,7 @@ enum SeatStatus {
       case SeatStatus.selected:
         return SeatWidget(seatStatus: this, onPressed: onPressed);
       case SeatStatus.empty:
-        return const SizedBox.square(dimension: 20);
+        return const SizedBox.square(dimension: 8);
       case SeatStatus.other:
         return LetterRowIndicator(index: index);
     }
