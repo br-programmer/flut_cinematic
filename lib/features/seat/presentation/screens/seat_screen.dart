@@ -23,7 +23,7 @@ class SeatScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return FlutCinematicBaseScreen(
       appBar: FlutCinematicAppBar(
-        title: '${texts.misc.dubbedStandar}\n'.hardCode,
+        title: '${texts.misc.dubbedStandar}\n',
         subTitle: movie.title,
         onBack: context.pop,
         button: const DateTimeAndRoomSelected(),
