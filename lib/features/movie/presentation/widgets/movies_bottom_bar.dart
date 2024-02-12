@@ -54,7 +54,10 @@ class _MoviesBottomBarItem extends HookConsumerWidget {
           Unauthenticated() when status.profile => () => context.pushNamed(
                 Routes.auth.name,
               ),
-          _ => () => ref.watch(StateNotifiers.bottonBar.notifier).change(status)
+          _ => () {
+              ref.read(authProvider.notifier).logout();
+              // ref.watch(StateNotifiers.bottonBar.notifier).change(status);
+            }
         },
         child: Column(
           mainAxisSize: MainAxisSize.min,

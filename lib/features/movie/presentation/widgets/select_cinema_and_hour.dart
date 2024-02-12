@@ -106,7 +106,7 @@ class _HourSelector extends HookConsumerWidget {
       borderRadius: borderRadius8,
       borderColor: borderColor,
       child: Text(
-        date.myHour.toLowerCase(),
+        date.myHour('en').toLowerCase(),
         style: context.textTheme.bodyLarge?.copyWith(
           color: backgroundColor,
         ),
