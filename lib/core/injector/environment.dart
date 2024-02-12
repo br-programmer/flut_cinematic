@@ -1,9 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flut_cinematic/firebase_options/firebase_options.dart';
 import 'package:flut_cinematic/firebase_options/firebase_options_dev.dart'
     as default_options_dev;
-import 'package:flut_cinematic/firebase_options/firebase_options_production.dart'
-    as default_options;
-import 'package:flut_cinematic/firebase_options/firebase_options_staging.dart'
+import 'package:flut_cinematic/firebase_options/firebase_options_stg.dart'
     as default_options_stg;
 
 enum Environment {
@@ -24,7 +23,7 @@ enum Environment {
       case Environment.staging:
         return default_options_stg.DefaultFirebaseOptions.currentPlatform;
       case Environment.prod:
-        return default_options.DefaultFirebaseOptions.currentPlatform;
+        return DefaultFirebaseOptions.currentPlatform;
     }
   }
 }

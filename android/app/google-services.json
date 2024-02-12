@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "343792956238",
+    "project_id": "flutcinematic",
+    "storage_bucket": "flutcinematic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343792956238:android:b222cb69f85e624860a41f",
+        "android_client_info": {
+          "package_name": "dev.brprogrammer.flut_cinematic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA54R0MlrRginywVDLHMIac-mHsjpgfxU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343792956238:android:9729aee182c8631b60a41f",
+        "android_client_info": {
+          "package_name": "dev.brprogrammer.flut_cinematic.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA54R0MlrRginywVDLHMIac-mHsjpgfxU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343792956238:android:2203f6d30021323260a41f",
+        "android_client_info": {
+          "package_name": "dev.brprogrammer.flut_cinematic.stg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA54R0MlrRginywVDLHMIac-mHsjpgfxU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
