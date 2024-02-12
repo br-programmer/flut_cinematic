@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "64.0.0"
+  _flutterfire_internals:
+    dependency: transitive
+    description:
+      name: _flutterfire_internals
+      sha256: "1a52f1afae8ab7ac4741425114713bdbba802f1ce1e0648e167ffcc6e05e96cf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.21"
   analyzer:
     dependency: transitive
     description:
@@ -257,6 +265,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.0"
+  firebase_auth:
+    dependency: transitive
+    description:
+      name: firebase_auth
+      sha256: "549f8ceb8cfc1920f85dea0ab73fb7dc209ee8182916b252eda342786c33369d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.17.4"
+  firebase_auth_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_auth_platform_interface
+      sha256: "83bfc14649f673db17ad0bffaa0222019f99f3ddf499bcc8b46e1eb3443d3e08"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.1.4"
+  firebase_auth_web:
+    dependency: transitive
+    description:
+      name: firebase_auth_web
+      sha256: d2266452698dd5f6e522408dacfa06bb7f9703b5bdd11498fce2812ded50805b
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.9.4"
   firebase_core:
     dependency: "direct main"
     description:
@@ -330,6 +362,13 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/flut_cinematic_domain"
+      relative: true
+    source: path
+    version: "0.1.0+1"
+  flut_cinematic_firebase:
+    dependency: "direct main"
+    description:
+      path: "packages/flut_cinematic_firebase"
       relative: true
     source: path
     version: "0.1.0+1"

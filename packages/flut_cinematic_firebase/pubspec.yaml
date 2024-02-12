@@ -1,20 +1,21 @@
-name: flut_cinematic_data
+name: flut_cinematic_firebase
 description: A Very Good Project created by Very Good CLI.
 version: 0.1.0+1
 publish_to: none
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
 
 dependencies:
-  flut_cinematic_api_client:
-    path: ../flut_cinematic_api_client 
+  firebase_auth: ^4.17.4
+  flutter:
+    sdk: flutter
   flut_cinematic_common:
     path: ../flut_cinematic_common 
   flut_cinematic_domain:
-    path: ../flut_cinematic_domain  
-  flut_cinematic_firebase:
-    path: ../flut_cinematic_firebase    
+    path: ../flut_cinematic_domain   
 
 dev_dependencies:
+  
   very_good_analysis: ^5.1.0

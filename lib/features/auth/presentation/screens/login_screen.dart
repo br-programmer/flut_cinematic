@@ -1,8 +1,12 @@
+import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends HookConsumerWidget {
   const LoginScreen._();
 
   static Widget builder(BuildContext _, GoRouterState __) {
@@ -10,7 +14,13 @@ class LoginScreen extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final emailController = useTextEditingController();
+    final passwordController = useTextEditingController();
+    if (kDebugMode) {
+      emailController.text = 'brayan@gmail.com';
+      passwordController.text = 'Test123';
+    }
     return FlutCinematicBaseScreen(
       body: Padding(
         padding: edgeInsetsH20,
@@ -40,17 +50,23 @@ class LoginScreen extends StatelessWidget {
                   title: 'Email'.hardCode,
                   hintText: 'Type your email'.hardCode,
                   prefixIcon: FlutCinematicIcons.email,
+                  controller: emailController,
                 ),
                 gap24,
                 FlutCinematicTextField.password(
                   title: 'Password'.hardCode,
                   hintText: 'Type your email'.hardCode,
                   prefixIcon: FlutCinematicIcons.key,
+                  controller: passwordController,
                 ),
                 gap20,
                 FlutCinematicPrimaryButton(
                   text: 'Login now'.hardCode,
-                  onPressed: () {},
+                  onPressed: () {
+                    final email = emailController.text;
+                    final password = passwordController.text;
+                    ref.read(authProvider.notifier).login(email, password);
+                  },
                 ),
                 gap32,
                 FlutCinematicPrimaryButton(

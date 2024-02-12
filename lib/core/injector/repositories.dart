@@ -11,4 +11,8 @@ class Repositories {
       http: ref.read(Providers.flutCinematicApi),
     ),
   );
+
+  static final auth = Provider<IAuthRepository>(
+    (ref) => AuthRepository(authService: ref.read(Services.auth))..init(),
+  );
 }

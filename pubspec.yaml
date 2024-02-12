@@ -18,6 +18,8 @@ dependencies:
     path: packages/flut_cinematic_data  
   flut_cinematic_domain:
     path: packages/flut_cinematic_domain
+  flut_cinematic_firebase:
+    path: packages/flut_cinematic_firebase  
   flut_cinematic_ui:
     path: packages/flut_cinematic_ui 
   flutter:
