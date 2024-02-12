@@ -25,6 +25,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.gr.dart"
     - "**/*.freezed.dart"
+    - "**/firebase_options/*.dart"
   errors:
     unused_import: error
     invalid_annotation_target: ignore

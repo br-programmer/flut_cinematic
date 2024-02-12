@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +13,13 @@ Future<void> bootstrap(Environment environment) async {
   return runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp(options: environment.options);
       LocaleSettings.useDeviceLocale();
+      GoRouter.optionURLReflectsImperativeAPIs = true;
       final app = ProviderScope(
         overrides: overrides(environment),
         child: const FlutCinematic(),
       );
-      GoRouter.optionURLReflectsImperativeAPIs = true;
       runApp(app);
       FlutterError.onError = (details) {
         if (enableLogging) {

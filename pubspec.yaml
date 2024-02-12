@@ -9,6 +9,7 @@ environment:
 dependencies:
   connectivity_plus: ^5.0.2
   dio: ^5.4.0
+  firebase_core: ^2.25.4
   flut_cinematic_api_client:
     path: packages/flut_cinematic_api_client
   flut_cinematic_common:
