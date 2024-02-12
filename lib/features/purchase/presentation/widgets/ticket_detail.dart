@@ -1,4 +1,5 @@
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -24,7 +25,7 @@ class TicketDetail extends HookConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Ticket details'.hardCode,
+                    texts.purchase.ticketDetails,
                     style: context.textTheme.headlineSmall,
                   ),
                   Text(
@@ -37,22 +38,22 @@ class TicketDetail extends HookConsumerWidget {
               const FlutCinematicDivider(useHero: false),
               gap16,
               _TicketItems(
-                titleA: 'Date'.hardCode,
+                titleA: texts.misc.date,
                 subTitleA: ticketState.date!.formatWithYear('en'),
-                titleB: 'Time'.hardCode,
+                titleB: texts.misc.time,
                 subTitleB: ticketState.time!.myHour('en').toLowerCase(),
               ),
               gap16,
               _TicketItems(
-                titleA: 'Room'.hardCode,
+                titleA: texts.misc.room,
                 subTitleA: '2'.hardCode,
-                titleB: 'Seats'.hardCode,
+                titleB: texts.seat.seats(n: seats.length),
                 subTitleB: seats.join(', '),
               ),
               gap16,
               _TicketItems(
-                titleA: 'Location'.hardCode,
-                subTitleA: 'Starview Cinema'.hardCode,
+                titleA: texts.misc.location,
+                subTitleA: 'Starview Cinema',
               ),
             ],
           ),

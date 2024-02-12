@@ -1,4 +1,5 @@
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +20,7 @@ class PurchaseScreen extends HookConsumerWidget {
         children: [
           gap32,
           Text(
-            'Doblada, Regular, 2D'.hardCode,
+            texts.misc.dubbedStandar,
             style: context.textTheme.bodyLarge?.copyWith(
               color: Palette.white.withOpacity(.8),
             ),

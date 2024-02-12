@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class PurchaseOk extends StatelessWidget {
         padding: edgeInsets20,
         child: SafeArea(
           child: FlutCinematicPrimaryButton(
-            text: 'Ok, got it!'.hardCode,
+            text: texts.purchase.okGoIt,
             onPressed: () => context.goNamed(Routes.movies.name),
           ),
         ),
