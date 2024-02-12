@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.verygoodcore.flut_cinematic">
+    package="dev.brprogrammer.flut_cinematic">
+
+   <uses-permission android:name="android.permission.INTERNET"/>
+   
    <application
         android:label="${appName}"
         android:name="${applicationName}"

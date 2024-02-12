@@ -1,4 +1,4 @@
-package com.example.verygoodcore.flut_cinematic
+package dev.brprogrammer.flut_cinematic
 
 import io.flutter.embedding.android.FlutterActivity
 

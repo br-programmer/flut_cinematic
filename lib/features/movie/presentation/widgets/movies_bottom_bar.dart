@@ -1,5 +1,6 @@
 import 'package:flut_cinematic/core/core.dart';
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic_common/flut_cinematic_common.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -15,11 +16,10 @@ class MoviesBottomBar extends StatelessWidget {
       MoviesBottomBarStatus.candyStore: 'Candy Store'.hardCode,
       MoviesBottomBarStatus.myProfile: 'My Profile'.hardCode,
     };
-
+    final botton = android ? edgeInsetsB10 : edgeInsetsZero;
     return SafeArea(
-      top: false,
       child: Padding(
-        padding: edgeInsetsT16,
+        padding: edgeInsetsT16.add(botton),
         child: Row(
           children: MoviesBottomBarStatus.values.mapList(
             (element) => _MoviesBottomBarItem(
