@@ -40,7 +40,7 @@ class TicketDetail extends HookConsumerWidget {
                 titleA: 'Date'.hardCode,
                 subTitleA: ticketState.date!.formatWithYear('en'),
                 titleB: 'Time'.hardCode,
-                subTitleB: ticketState.time!.myHour.toLowerCase(),
+                subTitleB: ticketState.time!.myHour('en').toLowerCase(),
               ),
               gap16,
               _TicketItems(

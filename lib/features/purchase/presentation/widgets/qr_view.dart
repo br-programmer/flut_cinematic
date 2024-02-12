@@ -12,7 +12,7 @@ class QrView extends HookConsumerWidget {
     final ticketState = ref.watch(ticketProvider);
     final name = '${ticketState.movieName}, Doblada, Regular 2D, Room 2\n';
     final date = 'Date: ${ticketState.date!.formatWithYear('en')}\n';
-    final time = 'Hour: ${ticketState.date!.myHour.toLowerCase()}\n';
+    final time = 'Hour: ${ticketState.time!.myHour('en').toLowerCase()}\n';
     final seats = 'Seats: ${ticketState.seats.join(', ')}';
     final data = '$name$date$time$seats'.hardCode;
     return SizedBox.square(
