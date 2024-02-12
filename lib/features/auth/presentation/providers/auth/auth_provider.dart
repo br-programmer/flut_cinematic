@@ -32,15 +32,12 @@ class AuthProvider extends StateNotifier<AuthState> {
   Future<void> login(String email, String password) async {
     final result = await _authRepository.login(email, password);
     state = const AuthState.authenticationInProgress();
-    final newState = switch (result) {
+    state = switch (result) {
+      Right() => state,
       Left(value: final failure) => AuthState.authenticationFailed(
           failure: failure,
         ),
-      Right() => null,
     };
-    if (newState != null) {
-      state = newState;
-    }
   }
 
   @override
@@ -52,5 +49,10 @@ class AuthProvider extends StateNotifier<AuthState> {
 
   void _listen(User user) {
     state = AuthState.authenticated(user: user);
+  }
+
+  Future<void> logout() async {
+    await _authRepository.logout();
+    state = const AuthState.unauthenticated();
   }
 }
