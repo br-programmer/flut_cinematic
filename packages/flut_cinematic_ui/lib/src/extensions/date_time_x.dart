@@ -27,7 +27,9 @@ extension DateTimeX on DateTime {
     return DateFormat('EEEE', locale).format(toLocal());
   }
 
-  String get myHour => DateFormat('hh:mm a').format(toLocal());
+  String myHour(String locale) {
+    return DateFormat('hh:mm a', locale).format(toLocal());
+  }
 
   bool get today {
     final today = DateTime.now();
