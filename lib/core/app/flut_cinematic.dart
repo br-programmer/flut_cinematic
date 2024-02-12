@@ -22,7 +22,7 @@ class FlutCinematic extends HookConsumerWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        onGenerateTitle: (_) => 'Flut Cinematic'.hardCode,
+        title: 'Flut Cinematic',
         themeMode: ThemeMode.dark,
         theme: FlutCinematicTheme.light,
         darkTheme: FlutCinematicTheme.dark,
