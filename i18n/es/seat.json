@@ -2,5 +2,9 @@
     "bookTickets": "Reservar entradas {{money}}",
     "avaible": "Disponible",
     "notAviable": "No disponible",
-    "selected": "Seleccionado"
+    "selected": "Seleccionado",
+    "seats": {
+        "one": "Asiento",
+        "other": "Asientos"
+    }
 }
