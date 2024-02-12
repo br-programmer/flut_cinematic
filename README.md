@@ -17,11 +17,15 @@
 ---
 ## Getting Started 🚀
 
+> First, create the file `launch.json` in the `.vscode` folder following the example `launch.json.example`, and add the values of the `dart-define (Environment variables)` in the `toolArgs` parameter.
+
 This project contains 3 flavors:
 
 - development
 - staging
 - production
+
+Can you add `Environment variables` for all flavors,
 
 To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
 
