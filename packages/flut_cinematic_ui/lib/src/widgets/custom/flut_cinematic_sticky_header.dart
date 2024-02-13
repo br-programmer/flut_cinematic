@@ -20,7 +20,9 @@ class FlutCinematicStickyHeader extends StatelessWidget {
             padding: edgeInsetsH20,
             child: Text(
               headerText,
-              style: context.textTheme.headlineSmall,
+              style: context.textTheme.headlineSmall?.copyWith(
+                fontWeight: AppFontWeight.semiBold,
+              ),
             ),
           ),
           centerTitle: false,

@@ -111,6 +111,7 @@ class FlutCinematicBaseButton extends StatelessWidget {
                                 ? textColor
                                 : Palette.white.withOpacity(.1),
                             fontSize: size.fontSize,
+                            fontWeight: AppFontWeight.semiBold,
                           ),
                     ),
                   ],

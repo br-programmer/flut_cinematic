@@ -11,6 +11,7 @@ class FlutCinematicCustomCard extends StatelessWidget {
     this.onPressed,
     this.backgroundColor,
     this.externalPadding = edgeInsetsZero,
+    this.height,
   });
   final Color? borderColor;
   final Widget child;
@@ -19,24 +20,28 @@ class FlutCinematicCustomCard extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final VoidCallback? onPressed;
   final Color? backgroundColor;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: externalPadding,
-      child: InkWell(
-        onTap: onPressed,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: borderColor ?? Palette.white.withOpacity(.2),
+    return SizedBox(
+      height: height,
+      child: Padding(
+        padding: externalPadding,
+        child: InkWell(
+          onTap: onPressed,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: borderColor ?? Palette.white.withOpacity(.2),
+              ),
+              borderRadius: borderRadius ?? borderRadius12,
+              color: backgroundColor,
             ),
-            borderRadius: borderRadius ?? borderRadius12,
-            color: backgroundColor,
-          ),
-          child: Padding(
-            padding: padding ?? edgeInsetsH12.add(edgeInsetsV10),
-            child: child,
+            child: Padding(
+              padding: padding ?? edgeInsetsH12.add(edgeInsetsV10),
+              child: child,
+            ),
           ),
         ),
       ),

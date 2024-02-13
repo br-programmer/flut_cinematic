@@ -11,6 +11,7 @@ class TextStyles {
     fontWeight: AppFontWeight.medium,
     letterSpacing: -.5,
     color: Palette.white,
+    package: FlutCinematicUI.package,
   );
 
   static TextStyle headlineSmall = _baseTextStyle.copyWith(fontSize: 20);

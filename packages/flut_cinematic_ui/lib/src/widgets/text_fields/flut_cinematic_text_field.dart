@@ -155,7 +155,9 @@ class _FlutCinematicTextFieldState extends State<FlutCinematicTextField> {
           if (widget.title != null) ...[
             Text(
               widget.title!,
-              style: context.textTheme.bodySmall,
+              style: context.textTheme.bodySmall?.copyWith(
+                fontWeight: AppFontWeight.semiBold,
+              ),
             ),
             gap8,
           ],
@@ -215,7 +217,10 @@ class _FlutCinematicTextFieldState extends State<FlutCinematicTextField> {
                 ...widget.formatters,
                 LengthLimitingTextInputFormatter(widget.maxLength),
               ],
-              style: widget.textStyle ?? context.textTheme.bodySmall,
+              style: widget.textStyle ??
+                  context.textTheme.bodySmall?.copyWith(
+                    fontWeight: AppFontWeight.semiBold,
+                  ),
             ),
           ),
           if (widget.error != null) ...[
