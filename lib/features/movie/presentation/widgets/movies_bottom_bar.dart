@@ -56,8 +56,7 @@ class _MoviesBottomBarItem extends HookConsumerWidget {
                 Routes.auth.name,
               ),
           _ => () {
-              ref.read(authProvider.notifier).logout();
-              // ref.watch(StateNotifiers.bottonBar.notifier).change(status);
+              ref.watch(StateNotifiers.bottonBar.notifier).change(status);
             }
         },
         child: Column(

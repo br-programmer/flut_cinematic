@@ -2,8 +2,8 @@ import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MoviesScreen extends ConsumerStatefulWidget {
   const MoviesScreen._();
@@ -60,12 +60,21 @@ class _MoviesScreenState extends ConsumerState<MoviesScreen> {
             onPressed: () => context.pushNamed(Routes.search.name),
             iconData: FlutCinematicIcons.search,
           ),
-          space16,
-          FlutCinematicIconButton(
-            onPressed: () {},
-            iconData: FlutCinematicIcons.filters,
-            size: FlutCinematicIconSize.medium,
-          ),
+          switch (ref.watch(authProvider)) {
+            Authenticated() => Row(
+                children: [
+                  space16,
+                  FlutCinematicIconButton(
+                    onPressed: ref.read(authProvider.notifier).logout,
+                    icon: const Icon(
+                      Icons.logout,
+                      color: Palette.white,
+                    ),
+                  ),
+                ],
+              ),
+            _ => const SizedBox.shrink(),
+          },
         ],
       ),
       body: RefreshIndicator(
