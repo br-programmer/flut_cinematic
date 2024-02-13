@@ -13,7 +13,7 @@ final videoProvider =
     VideoState.loading(),
     movieRepository: ref.read(Repositories.movie),
     movieId: movieId,
-  ),
+  )..loadVideos(),
 );
 
 class VideoProvider extends StateNotifier<VideoState> {
