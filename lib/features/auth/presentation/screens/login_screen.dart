@@ -49,52 +49,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
-                    texts.auth.readyForPopcorn,
-                    style: context.textTheme.bodyLarge,
-                  ),
-                  gap4,
-                  RichText(
-                    text: TextSpan(
-                      text: texts.auth.enterYour,
-                      style: context.textTheme.headlineLarge,
-                      children: [
-                        TextSpan(
-                          text: texts.auth.fildLoverWorld,
-                          style: context.textTheme.headlineMedium,
-                        ),
-                      ],
-                    ),
-                  ),
-                  gap20,
-                  FlutCinematicTextField(
-                    title: texts.auth.email,
-                    hintText: texts.auth.typeYourEmail,
-                    prefixIcon: FlutCinematicIcons.email,
-                    controller: emailController,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) => FormValidator.email(
-                      value,
-                      emailInvalid: texts.auth.invalidEmail,
-                      emailRequired: texts.auth.fieldRequired,
-                    ),
-                  ),
+                  const LoginHeader(),
+                  LoginEmailImput(emailController: emailController),
                   gap24,
-                  FlutCinematicTextField.password(
-                    title: texts.auth.password,
-                    hintText: texts.auth.typeYourPassword,
-                    prefixIcon: FlutCinematicIcons.key,
-                    controller: passwordController,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) => FormValidator.passwordValid(
-                      value,
-                      passwordRequired: texts.auth.fieldRequired,
-                      passwordShort: texts.auth.passwordInvalid,
-                    ),
-                  ),
+                  LoginPasswordImput(passwordController: passwordController),
                   gap20,
-                  FlutCinematicPrimaryButton(
-                    text: texts.auth.loginNow,
+                  LoginSignInButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         final email = emailController.text;
@@ -108,6 +68,18 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       }
                     },
                   ),
+                  gap32,
+                  Text(
+                    '${texts.auth.orYouCan}:',
+                    style: context.textTheme.labelMedium?.copyWith(
+                      color: Palette.white.withOpacity(.5),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  gap16,
+                  const LoginGoogleSignIn(),
+                  gap12,
+                  const LoginAppleSignIn(),
                 ],
               ),
             ),
