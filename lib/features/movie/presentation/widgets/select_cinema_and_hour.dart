@@ -44,7 +44,9 @@ class SelectCinemaAndHour extends HookConsumerWidget {
               Expanded(
                 child: Text(
                   'Starview Cinema',
-                  style: context.textTheme.headlineSmall,
+                  style: context.textTheme.headlineSmall?.copyWith(
+                    fontWeight: AppFontWeight.semiBold,
+                  ),
                 ),
               ),
               FlutCinematicIconButton(
@@ -97,20 +99,29 @@ class _HourSelector extends HookConsumerWidget {
     final backgroundColor =
         hourAvailable ? null : Palette.white.withOpacity(.2);
     return FlutCinematicCustomCard(
+      height: 32,
       onPressed: hourAvailable
           ? () {
               ref.read(ticketProvider.notifier).timeSelect(date);
             }
           : null,
-      padding: edgeInsetsH20.add(edgeInsetsV4),
+      padding: edgeInsetsH20,
       backgroundColor: backgroundColor,
       borderRadius: borderRadius8,
       borderColor: borderColor,
-      child: Text(
-        date.myHour(LocaleSettings.currentLocale.languageCode).toLowerCase(),
-        style: context.textTheme.bodyLarge?.copyWith(
-          color: backgroundColor,
-        ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            date
+                .myHour(LocaleSettings.currentLocale.languageCode)
+                .toLowerCase(),
+            style: context.textTheme.bodyLarge?.copyWith(
+              color: backgroundColor,
+              fontWeight: AppFontWeight.semiBold,
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -66,7 +66,9 @@ class _DataSelectorItem extends HookConsumerWidget {
             text: TextSpan(
               text:
                   '${dateTime.format(LocaleSettings.currentLocale.languageCode)}\n',
-              style: context.textTheme.bodySmall,
+              style: context.textTheme.bodySmall?.copyWith(
+                fontWeight: AppFontWeight.semiBold,
+              ),
               children: [
                 TextSpan(
                   text: dateTime.dayInText(

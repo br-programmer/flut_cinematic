@@ -27,7 +27,9 @@ class MovieDetailCard extends HookConsumerWidget {
           gap12,
           Text(
             movie.title,
-            style: context.textTheme.headlineSmall,
+            style: context.textTheme.headlineSmall?.copyWith(
+              fontWeight: AppFontWeight.semiBold,
+            ),
           ),
           gap4,
           Text(
