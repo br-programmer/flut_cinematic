@@ -10,3 +10,4 @@ export 'movies_loading_widget.dart';
 export 'search_movie_result.dart';
 export 'search_movie_widget.dart';
 export 'select_cinema_and_hour.dart';
+export 'watch_trailer_button.dart';
