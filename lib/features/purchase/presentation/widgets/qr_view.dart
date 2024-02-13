@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
@@ -10,11 +11,14 @@ class QrView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ticketState = ref.watch(ticketProvider);
-    final name = '${ticketState.movieName}, Doblada, Regular 2D, Room 2\n';
-    final date = 'Date: ${ticketState.date!.formatWithYear('en')}\n';
-    final time = 'Hour: ${ticketState.time!.myHour('en').toLowerCase()}\n';
-    final seats = 'Seats: ${ticketState.seats.join(', ')}';
-    final data = '$name$date$time$seats'.hardCode;
+    final name = '${ticketState.movieName}, ${texts.misc.dubbedStandar}\n';
+    final date =
+        '${texts.misc.date}: ${ticketState.date!.formatWithYear(LocaleSettings.currentLocale.languageCode)}\n';
+    final time =
+        '${texts.misc.time}: ${ticketState.time!.myHour(LocaleSettings.currentLocale.languageCode).toLowerCase()}\n';
+    final seats =
+        '${texts.seat.seats(n: ticketState.seats.length)}: ${ticketState.seats.join(', ')}';
+    final data = '$name$date$time$seats';
     return SizedBox.square(
       dimension: context.mediaQuery.size.width * .5,
       child: Center(

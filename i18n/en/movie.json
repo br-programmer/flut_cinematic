@@ -1,5 +1,5 @@
 {
-    "inPremiere": "In premiere",
+    "inPremiere": "Premiere",
     "popular": "Popular",
     "upcoming": "Upcoming",
     "moviesFor": "Movies for",
@@ -8,5 +8,9 @@
     "noMovieFound": "No movie found",
     "tomorrow": "tomorrow",
     "useTheSearchBar": "Use the search bar to filter by title",
-    "getReadyForAPersonalized": "Get ready for a personalized movie experience!"
+    "getReadyForAPersonalized": "Get ready for a personalized movie experience!",
+    "movies": "Movies",
+    "candyStore": "Candy Store",
+    "myProfile": "My Profile",
+    "chooseTheSchedule": "Choose the schedule you like the most"
 }

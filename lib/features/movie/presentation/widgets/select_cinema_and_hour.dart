@@ -1,4 +1,5 @@
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_domain/flut_cinematic_domain.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class SelectCinemaAndHour extends HookConsumerWidget {
             children: [
               Expanded(
                 child: Text(
-                  'Starview Cinema'.hardCode,
+                  'Starview Cinema',
                   style: context.textTheme.headlineSmall,
                 ),
               ),
@@ -55,7 +56,7 @@ class SelectCinemaAndHour extends HookConsumerWidget {
           ),
           gap2,
           Text(
-            'Elije el horario que mas te guste'.hardCode,
+            texts.movie.chooseTheSchedule,
             style: context.textTheme.bodyMedium,
           ),
           gap12,
@@ -106,7 +107,7 @@ class _HourSelector extends HookConsumerWidget {
       borderRadius: borderRadius8,
       borderColor: borderColor,
       child: Text(
-        date.myHour('en').toLowerCase(),
+        date.myHour(LocaleSettings.currentLocale.languageCode).toLowerCase(),
         style: context.textTheme.bodyLarge?.copyWith(
           color: backgroundColor,
         ),

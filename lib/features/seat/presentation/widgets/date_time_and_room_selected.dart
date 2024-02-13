@@ -30,7 +30,9 @@ class DateTimeAndRoomSelected extends HookConsumerWidget {
                   space6,
                   RichText(
                     text: TextSpan(
-                      text: date!.formatShort('en'),
+                      text: date!.formatShort(
+                        LocaleSettings.currentLocale.languageCode,
+                      ),
                       style: context.textTheme.bodySmall,
                       children: [
                         TextSpan(
@@ -42,7 +44,7 @@ class DateTimeAndRoomSelected extends HookConsumerWidget {
                         ),
                         TextSpan(
                           text: time!
-                              .myHour('en')
+                              .myHour(LocaleSettings.currentLocale.languageCode)
                               .replaceAll(' ', '')
                               .toLowerCase(),
                         ),

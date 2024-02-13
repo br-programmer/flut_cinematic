@@ -36,7 +36,7 @@ class PurchaseScreen extends HookConsumerWidget {
           const QrView(),
           gap12,
           Text(
-            'Present this QR when entering the cinema'.hardCode,
+            texts.purchase.presentQr,
             style: context.textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),

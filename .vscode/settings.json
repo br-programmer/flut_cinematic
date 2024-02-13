@@ -11,7 +11,7 @@
   "editor.formatOnSave": true,
   "files.exclude": {
     "**/*.freezed.dart": true,
-    "**/*.g.dart": true,
+    "**/*.g.dart": false,
     "**/.flutter-plugins*": true,
     "**/.metadata*": true,
     "**/.packages": true

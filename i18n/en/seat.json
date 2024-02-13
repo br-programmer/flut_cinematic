@@ -1,11 +1,11 @@
 {
-    "bookTickets": "Book tickets {{money}}",
-    "avaible": "Avaible",
-    "notAviable": "Not aviable",
-    "selected": "Selected",
     "seats": {
         "one": "Seat",
         "other": "Seats"
     },
+    "selected": "Selected",
+    "available": "Available",
+    "notAvailable": "Not aviable",
+    "bookTickets": "Book tickets {{money}}",
     "chooseSeats": "Choose seats"
 }

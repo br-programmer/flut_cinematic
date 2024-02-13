@@ -1,5 +1,6 @@
 import 'package:flut_cinematic/core/core.dart';
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_common/flut_cinematic_common.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +13,9 @@ class MoviesBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bottomBarTexts = {
-      MoviesBottomBarStatus.movies: 'Movies'.hardCode,
-      MoviesBottomBarStatus.candyStore: 'Candy Store'.hardCode,
-      MoviesBottomBarStatus.myProfile: 'My Profile'.hardCode,
+      MoviesBottomBarStatus.movies: texts.movie.movies,
+      MoviesBottomBarStatus.candyStore: texts.movie.candyStore,
+      MoviesBottomBarStatus.myProfile: texts.movie.myProfile,
     };
     final botton = android ? edgeInsetsB10 : edgeInsetsZero;
     return SafeArea(

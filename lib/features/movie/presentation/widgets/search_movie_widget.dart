@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -26,13 +27,13 @@ class SearchMovieWidget extends StatelessWidget {
             )
           else ...[
             Text(
-              'Use the search bar to filter by title'.hardCode,
+              texts.movie.useTheSearchBar,
               style: context.textTheme.headlineSmall,
               textAlign: TextAlign.center,
             ),
             gap8,
             Text(
-              'Get ready for a personalized movie experience!'.hardCode,
+              texts.movie.getReadyForAPersonalized,
               style: context.textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),

@@ -1,4 +1,4 @@
-import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 
 enum MovieType {
   nowPlaying(),
@@ -10,11 +10,11 @@ enum MovieType {
   String get title {
     switch (this) {
       case MovieType.nowPlaying:
-        return 'In premiere'.hardCode;
+        return texts.movie.inPremiere;
       case MovieType.popular:
-        return 'Popular'.hardCode;
+        return texts.movie.popular;
       case MovieType.upcoming:
-        return 'Upcoming'.hardCode;
+        return texts.movie.upcoming;
     }
   }
 }

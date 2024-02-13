@@ -13,9 +13,9 @@ enum SeatStatus {
   String get text {
     switch (this) {
       case SeatStatus.aviable:
-        return texts.seat.avaible;
+        return texts.seat.available;
       case SeatStatus.notAviable:
-        return texts.seat.notAviable;
+        return texts.seat.notAvailable;
       case SeatStatus.selected:
         return texts.seat.selected;
       case SeatStatus.empty:

@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_common/flut_cinematic_common.dart';
 import 'package:flut_cinematic_domain/flut_cinematic_domain.dart';
@@ -19,7 +20,7 @@ class MovieScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutCinematicBaseScreen(
       appBar: FlutCinematicAppBar(
-        title: 'Doblada, Reguar, 2D\n'.hardCode,
+        title: '${texts.misc.dubbedStandar}\n',
         subTitle: movie.title,
         onBack: context.pop,
         button: const DateSelector(),

@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_domain/flut_cinematic_domain.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
@@ -21,7 +22,7 @@ class ChooseSeatsButton extends HookConsumerWidget {
         padding: edgeInsets20,
         child: SafeArea(
           child: FlutCinematicPrimaryButton(
-            text: 'Choose seats'.hardCode,
+            text: texts.seat.chooseSeats,
             onPressed: enable
                 ? switch (authState) {
                     Unauthenticated() => () => context.pushNamed(

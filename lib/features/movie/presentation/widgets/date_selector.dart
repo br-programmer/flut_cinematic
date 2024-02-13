@@ -1,7 +1,9 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:slang/builder/utils/string_extensions.dart';
 
 class DateAviable {
   DateAviable._();
@@ -62,14 +64,15 @@ class _DataSelectorItem extends HookConsumerWidget {
           space4,
           RichText(
             text: TextSpan(
-              text: '${dateTime.format('en')}\n',
+              text:
+                  '${dateTime.format(LocaleSettings.currentLocale.languageCode)}\n',
               style: context.textTheme.bodySmall,
               children: [
                 TextSpan(
                   text: dateTime.dayInText(
-                    'en',
-                    todayText: 'Today'.hardCode,
-                    tomorrowText: 'Tomorrow'.hardCode,
+                    LocaleSettings.currentLocale.languageCode,
+                    todayText: texts.movie.today.capitalize(),
+                    tomorrowText: texts.movie.tomorrow.capitalize(),
                   ),
                   style: context.textTheme.labelSmall?.copyWith(
                     color: Palette.white.withOpacity(.6),

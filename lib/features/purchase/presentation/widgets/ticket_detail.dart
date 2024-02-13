@@ -39,14 +39,18 @@ class TicketDetail extends HookConsumerWidget {
               gap16,
               _TicketItems(
                 titleA: texts.misc.date,
-                subTitleA: ticketState.date!.formatWithYear('en'),
+                subTitleA: ticketState.date!.formatWithYear(
+                  LocaleSettings.currentLocale.languageCode,
+                ),
                 titleB: texts.misc.time,
-                subTitleB: ticketState.time!.myHour('en').toLowerCase(),
+                subTitleB: ticketState.time!
+                    .myHour(LocaleSettings.currentLocale.languageCode)
+                    .toLowerCase(),
               ),
               gap16,
               _TicketItems(
                 titleA: texts.misc.room,
-                subTitleA: '2'.hardCode,
+                subTitleA: '2',
                 titleB: texts.seat.seats(n: seats.length),
                 subTitleB: seats.join(', '),
               ),

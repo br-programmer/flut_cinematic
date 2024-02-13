@@ -1,5 +1,5 @@
 {
-    "inPremiere": "En estreno",
+    "inPremiere": "Estreno",
     "popular": "Popular",
     "upcoming": "Próximamente",
     "moviesFor": "Películas para",
@@ -8,5 +8,9 @@
     "noMovieFound": "No se encontró ninguna película",
     "tomorrow": "mañana",
     "useTheSearchBar": "Utiliza la barra de búsqueda para filtrar por título",
-    "getReadyForAPersonalized": "¡Prepárate para una experiencia cinematográfica personalizada!"
+    "getReadyForAPersonalized": "¡Prepárate para una experiencia cinematográfica personalizada!",
+    "movies": "Películas",
+    "candyStore": "Tienda de dulces",
+    "myProfile": "Mi perfil",
+    "chooseTheSchedule": "Elige el horario que más te guste"
 }

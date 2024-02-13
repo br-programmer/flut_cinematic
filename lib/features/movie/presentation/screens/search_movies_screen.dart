@@ -1,4 +1,5 @@
 import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -18,7 +19,7 @@ class SearchMoviesScreen extends HookConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           FlutCinematicSearchTextField(
-            hintText: 'Search movies'.hardCode,
+            hintText: texts.movie.searchMovies,
             padding: edgeInsetsH20.add(edgeInsetsV12),
             duration: duration500ms,
             onChanged: ref.read(searchProvider.notifier).search,
@@ -27,7 +28,7 @@ class SearchMoviesScreen extends HookConsumerWidget {
           gap12,
           switch (ref.watch(searchProvider)) {
             SearchResultState(movies: final movies) when movies.isEmpty =>
-              SearchMovieWidget(text: 'No movie found'.hardCode),
+              SearchMovieWidget(text: texts.movie.noMovieFound),
             SearchResultState(movies: final movies) =>
               SearchMovieResult(movies: movies),
             SearchingState() => const SearchMovieResult(movies: []),

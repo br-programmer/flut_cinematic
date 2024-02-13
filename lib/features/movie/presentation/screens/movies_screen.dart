@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
@@ -51,8 +52,8 @@ class _MoviesScreenState extends ConsumerState<MoviesScreen> {
   Widget build(BuildContext context) {
     return FlutCinematicBaseScreen(
       appBar: FlutCinematicAppBar(
-        title: 'Movies for\n'.hardCode,
-        subTitle: 'today'.hardCode,
+        title: '${texts.movie.moviesFor}\n',
+        subTitle: texts.movie.today,
         onArrowDown: () {},
         actions: [
           FlutCinematicIconButton(

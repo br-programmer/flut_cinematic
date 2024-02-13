@@ -1,3 +1,4 @@
+import 'package:flut_cinematic/i18n/translations.g.dart';
 import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_domain/flut_cinematic_domain.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
@@ -18,7 +19,7 @@ class SearchMovieResult extends StatelessWidget {
           Padding(
             padding: edgeInsetsH20,
             child: Text(
-              'In premiere'.hardCode,
+              texts.movie.inPremiere,
               style: context.textTheme.bodyLarge,
             ),
           ),

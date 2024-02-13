@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 
 class AuthInterceptor extends Interceptor {
@@ -8,7 +10,10 @@ class AuthInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.queryParameters.addAll(_queryParameters);
+    final language = Platform.localeName.substring(0, 2);
+    options.queryParameters
+      ..addAll(_queryParameters)
+      ..addAll({'language': language});
     super.onRequest(options, handler);
   }
 }
