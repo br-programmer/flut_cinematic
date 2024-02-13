@@ -30,8 +30,8 @@ class AuthProvider extends StateNotifier<AuthState> {
   }
 
   Future<void> login(String email, String password) async {
-    final result = await _authRepository.login(email, password);
     state = const AuthState.authenticationInProgress();
+    final result = await _authRepository.login(email, password);
     state = switch (result) {
       Right() => state,
       Left(value: final failure) => AuthState.authenticationFailed(
