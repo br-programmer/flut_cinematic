@@ -26,11 +26,15 @@ class TicketDetail extends HookConsumerWidget {
                 children: [
                   Text(
                     texts.purchase.ticketDetails,
-                    style: context.textTheme.headlineSmall,
+                    style: context.textTheme.headlineSmall?.copyWith(
+                      fontWeight: AppFontWeight.semiBold,
+                    ),
                   ),
                   Text(
                     total,
-                    style: context.textTheme.headlineSmall,
+                    style: context.textTheme.headlineSmall?.copyWith(
+                      fontWeight: AppFontWeight.semiBold,
+                    ),
                   ),
                 ],
               ),
@@ -119,7 +123,9 @@ class _TicketItem extends StatelessWidget {
           ),
           Text(
             subTitle,
-            style: context.textTheme.bodyLarge,
+            style: context.textTheme.bodyLarge?.copyWith(
+              fontWeight: AppFontWeight.semiBold,
+            ),
           ),
         ],
       ),

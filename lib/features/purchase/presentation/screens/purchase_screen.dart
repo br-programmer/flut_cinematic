@@ -27,10 +27,13 @@ class PurchaseScreen extends HookConsumerWidget {
             textAlign: TextAlign.center,
           ),
           gap2,
-          Text(
-            ref.read(ticketProvider).movieName!,
-            style: context.textTheme.headlineMedium,
-            textAlign: TextAlign.center,
+          Padding(
+            padding: edgeInsetsH30,
+            child: Text(
+              ref.read(ticketProvider).movieName!,
+              style: context.textTheme.headlineMedium,
+              textAlign: TextAlign.center,
+            ),
           ),
           gap32,
           const QrView(),
