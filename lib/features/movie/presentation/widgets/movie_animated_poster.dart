@@ -34,14 +34,22 @@ class _MovieAnimatedPosterState extends ConsumerState<MovieAnimatedPoster> {
       width: double.infinity,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOutCubicEmphasized,
-      child: Hero(
-        tag: movie.tag,
-        child: FlutCinematicImage(
-          onTap: onTap,
-          fit: BoxFit.fitWidth,
-          imageUrl: movie.poster,
-          borderRadius: borderRadius12,
-        ),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Positioned.fill(
+            child: Hero(
+              tag: movie.tag,
+              child: FlutCinematicImage(
+                onTap: onTap,
+                fit: BoxFit.fitWidth,
+                imageUrl: movie.poster,
+                borderRadius: borderRadius12,
+              ),
+            ),
+          ),
+          WatchTrailerButton(movieId: movie.id),
+        ],
       ),
     );
   }
