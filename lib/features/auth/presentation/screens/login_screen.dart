@@ -19,6 +19,8 @@ class LoginScreen extends StatefulHookConsumerWidget {
 }
 
 class _LoginScreenState extends ConsumerState<LoginScreen> {
+  late final formKey = GlobalKey<FormState>();
+
   void _listener(AuthState? _, AuthState authState) {
     switch (authState) {
       case Authenticated():
@@ -36,58 +38,78 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       passwordController.text = 'Test123';
     }
     ref.listen(authProvider, _listener);
+
     return FlutCinematicBaseScreen(
       body: Padding(
         padding: edgeInsetsH20,
         child: Center(
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  texts.auth.readyForPopcorn,
-                  style: context.textTheme.bodyLarge,
-                ),
-                gap4,
-                RichText(
-                  text: TextSpan(
-                    text: texts.auth.enterYour,
-                    style: context.textTheme.headlineLarge,
-                    children: [
-                      TextSpan(
-                        text: texts.auth.fildLoverWorld,
-                        style: context.textTheme.headlineMedium,
-                      ),
-                    ],
+            child: Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    texts.auth.readyForPopcorn,
+                    style: context.textTheme.bodyLarge,
                   ),
-                ),
-                gap20,
-                FlutCinematicTextField(
-                  title: texts.auth.email,
-                  hintText: texts.auth.typeYourEmail,
-                  prefixIcon: FlutCinematicIcons.email,
-                  controller: emailController,
-                ),
-                gap24,
-                FlutCinematicTextField.password(
-                  title: texts.auth.password,
-                  hintText: texts.auth.typeYourPassword,
-                  prefixIcon: FlutCinematicIcons.key,
-                  controller: passwordController,
-                ),
-                gap20,
-                FlutCinematicPrimaryButton(
-                  text: texts.auth.loginNow,
-                  onPressed: () {
-                    final email = emailController.text;
-                    final password = passwordController.text;
-                    showLoader(
-                      context,
-                      ref.read(authProvider.notifier).login(email, password),
-                    );
-                  },
-                ),
-              ],
+                  gap4,
+                  RichText(
+                    text: TextSpan(
+                      text: texts.auth.enterYour,
+                      style: context.textTheme.headlineLarge,
+                      children: [
+                        TextSpan(
+                          text: texts.auth.fildLoverWorld,
+                          style: context.textTheme.headlineMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                  gap20,
+                  FlutCinematicTextField(
+                    title: texts.auth.email,
+                    hintText: texts.auth.typeYourEmail,
+                    prefixIcon: FlutCinematicIcons.email,
+                    controller: emailController,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator: (value) => FormValidator.email(
+                      value,
+                      emailInvalid: texts.auth.invalidEmail,
+                      emailRequired: texts.auth.fieldRequired,
+                    ),
+                  ),
+                  gap24,
+                  FlutCinematicTextField.password(
+                    title: texts.auth.password,
+                    hintText: texts.auth.typeYourPassword,
+                    prefixIcon: FlutCinematicIcons.key,
+                    controller: passwordController,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator: (value) => FormValidator.passwordValid(
+                      value,
+                      passwordRequired: texts.auth.fieldRequired,
+                      passwordShort: texts.auth.passwordInvalid,
+                    ),
+                  ),
+                  gap20,
+                  FlutCinematicPrimaryButton(
+                    text: texts.auth.loginNow,
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        final email = emailController.text;
+                        final password = passwordController.text;
+                        showLoader(
+                          context,
+                          ref
+                              .read(authProvider.notifier)
+                              .login(email, password),
+                        );
+                      }
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),
