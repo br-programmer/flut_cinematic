@@ -1,6 +1,7 @@
 import 'dart:ui';
 
-import 'package:flut_cinematic/features/features.dart';
+import 'package:flut_cinematic/i18n/translations.g.dart';
+import 'package:flut_cinematic/lib.dart';
 import 'package:flut_cinematic_ui/flut_cinematic_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -21,7 +22,13 @@ class WatchTrailerButton extends HookConsumerWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
               child: FlutCinematicBaseButton(
-                onPressed: () {},
+                onPressed: () {
+                  ref.read(Services.urlLaunch).launch(
+                        videos
+                            .reduce((p, c) => p.size > c.size ? p : c)
+                            .trailer,
+                      );
+                },
                 color: Palette.white.withOpacity(.2),
                 padding: edgeInsetsH8.add(edgeInsetsV4),
                 child: Row(
@@ -32,7 +39,7 @@ class WatchTrailerButton extends HookConsumerWidget {
                     ),
                     space4,
                     Text(
-                      'Watch trailer',
+                      texts.movie.watchTrailer,
                       style: context.textTheme.bodySmall,
                     ),
                   ],
