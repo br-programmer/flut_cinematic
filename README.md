@@ -12,12 +12,48 @@
 
 - **Advanced Internationalization System:** FlutCinematic utilizes an advanced internationalization (i18n) system that allows you to enjoy the app in multiple languages. Easily switch between English and Spanish for a fully tailored experience.
 
+- **Authentication:** Utilize a secure authentication system that triggers authentication prompts specifically when a user initiates a purchase transaction. This ensures that authentication seamlessly integrates into the purchase process while remaining unobtrusive during other interactions with the application.
+
+- **Trailer:** Users can access movie trailers.
+
+- **Date and Time Selection:** Users can choose the date and time of their movie screening according to their convenience.
+
+- **Seat Selection:** Users can select specific seats they wish to reserve for the movie screening.
+
 - **Constant Updates:** Stay up-to-date with the latest news from the world of cinema, content updates, and new features added regularly to the app.
 
 ---
 ## Getting Started 🚀
 
 > First, create the file `launch.json` in the `.vscode` folder following the example `launch.json.example`, and add the values of the `dart-define (Environment variables)` in the `toolArgs` parameter.
+
+Now you must execute the following commands to obtain the packages and generate the necessary code:
+
+```sh
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+dart run slang
+cd packages
+cd flut_cinematic_api_client
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+cd ..
+cd flut_cinematic_common
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+cd ..
+cd flut_cinematic_data
+flutter pub get
+cd .. 
+cd flut_cinematic_domain
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+cd flut_cinematic_firebase
+flutter pub get
+cd ..
+cd flut_cinematic_ui
+flutter pub get
+```
 
 This project contains 3 flavors:
 
@@ -132,8 +168,6 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 ### Generating Translations
 
 To use the latest translations changes, you will need to generate them:
-
-1. Generate localizations for the current project:
 
 ```sh
 dart run slang

@@ -108,7 +108,7 @@ app.*.map.json
 !.idea/dictionaries/
 !.idea/runConfigurations/
 
-# .vscode/launch.json
+.vscode/launch.json
 
 *.g.dart
 *.freezed.dart
