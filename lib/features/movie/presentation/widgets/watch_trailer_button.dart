@@ -12,7 +12,8 @@ class WatchTrailerButton extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return switch (ref.watch(videoProvider(movieId))) {
-      LoadedVideoState(videos: final videos) => Positioned(
+      LoadedVideoState(videos: final videos) when videos.isNotEmpty =>
+        Positioned(
           left: 12,
           bottom: 12,
           child: ClipRRect(
