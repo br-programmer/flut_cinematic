@@ -36,6 +36,7 @@ dependencies:
   riverpod: ^2.4.9
   slang: ^3.28.0
   slang_flutter: ^3.28.0
+  url_launcher: ^6.2.4
 
 dev_dependencies:
   build_runner: ^2.4.8     
