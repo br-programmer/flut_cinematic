@@ -13,10 +13,11 @@ class SeatLayoutWidget extends HookConsumerWidget {
       child: Padding(
         padding: edgeInsetsH4,
         child: FittedBox(
-          fit: BoxFit.scaleDown,
+          fit: BoxFit.cover,
           child: InteractiveViewer(
             minScale: 1,
             maxScale: 2,
+            clipBehavior: Clip.none,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: rows.mapList(
