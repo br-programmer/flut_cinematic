@@ -68,7 +68,7 @@ class FlutCinematicBaseButton extends StatelessWidget {
   final ButtonSize size;
   final bool centered;
   final TextStyle? textStyle;
-  final EdgeInsets? padding;
+  final EdgeInsetsGeometry? padding;
   final Widget? child;
   final double? rawSize;
   final BorderRadiusGeometry borderRadius;
