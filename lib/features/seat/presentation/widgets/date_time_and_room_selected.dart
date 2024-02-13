@@ -33,7 +33,9 @@ class DateTimeAndRoomSelected extends HookConsumerWidget {
                       text: date!.formatShort(
                         LocaleSettings.currentLocale.languageCode,
                       ),
-                      style: context.textTheme.bodySmall,
+                      style: context.textTheme.bodySmall?.copyWith(
+                        fontWeight: AppFontWeight.semiBold,
+                      ),
                       children: [
                         TextSpan(
                           text: ' ${texts.misc.at} ',
@@ -67,7 +69,9 @@ class DateTimeAndRoomSelected extends HookConsumerWidget {
                   RichText(
                     text: TextSpan(
                       text: '${texts.misc.room} 2',
-                      style: context.textTheme.bodySmall,
+                      style: context.textTheme.bodySmall?.copyWith(
+                        fontWeight: AppFontWeight.semiBold,
+                      ),
                     ),
                   ),
                 ],
