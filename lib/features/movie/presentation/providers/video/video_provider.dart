@@ -8,7 +8,7 @@ part 'video_provider.freezed.dart';
 part 'video_state.dart';
 
 final videoProvider =
-    StateNotifierProvider.autoDispose.family<VideoProvider, VideoState, int>(
+    StateNotifierProviderFamily<VideoProvider, VideoState, int>(
   (ref, movieId) => VideoProvider(
     VideoState.loading(),
     movieRepository: ref.read(Repositories.movie),
