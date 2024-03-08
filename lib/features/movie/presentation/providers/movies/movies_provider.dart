@@ -73,13 +73,10 @@ class MoviesProvider extends StateNotifier<MoviesState> {
   }
 
   FutureHttpRequest<MovieResponse> _movies(MovieRequest request) {
-    switch (_type) {
-      case MovieType.nowPlaying:
-        return _movieRepository.nowPlaying(request: request);
-      case MovieType.popular:
-        return _movieRepository.popular(request: request);
-      case MovieType.upcoming:
-        return _movieRepository.upcoming(request: request);
-    }
+    return switch (_type) {
+      MovieType.nowPlaying => _movieRepository.nowPlaying(request: request),
+      MovieType.popular => _movieRepository.popular(request: request),
+      MovieType.upcoming => _movieRepository.upcoming(request: request),
+    };
   }
 }
