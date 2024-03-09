@@ -163,14 +163,14 @@ class _FlutCinematicTextFieldState extends State<FlutCinematicTextField> {
           ],
           ValueListenableBuilder(
             valueListenable: obscureText,
-            builder: (context, value, child) => TextFormField(
+            builder: (_, value, __) => TextFormField(
               autofocus: widget.autofocus,
               autocorrect: widget.autocorrect,
               initialValue: widget.initialValue,
               readOnly: widget.readOnly,
               onFieldSubmitted: widget.onSubmitted,
               obscuringCharacter: '*',
-              obscureText: obscureText.value,
+              obscureText: value,
               onChanged: widget.onChanged,
               focusNode: widget.focusNode ?? focusNode,
               controller: widget.controller,
