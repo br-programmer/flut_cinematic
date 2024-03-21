@@ -4,9 +4,9 @@ part 'http_request_failure.freezed.dart';
 
 @freezed
 sealed class HttpRequestFailure with _$HttpRequestFailure implements Exception {
-  factory HttpRequestFailure.unauthorized() = _Unauthorized;
-  factory HttpRequestFailure.internalServer() = _InternalServer;
-  factory HttpRequestFailure.serviceUnavailable() = _ServiceUnavailable;
-  factory HttpRequestFailure.unhandledException() = _UnhandledException;
-  factory HttpRequestFailure.network() = _Network;
+  const factory HttpRequestFailure.unauthorized() = _Unauthorized;
+  const factory HttpRequestFailure.internalServer() = _InternalServer;
+  const factory HttpRequestFailure.serviceUnavailable() = _ServiceUnavailable;
+  const factory HttpRequestFailure.unhandledException() = _UnhandledException;
+  const factory HttpRequestFailure.network() = _Network;
 }
