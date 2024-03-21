@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-extension DoubleX on double {
+extension NumX on num {
   NumberFormat get _currencyFormat {
     return NumberFormat.simpleCurrency(decimalDigits: 2);
   }
